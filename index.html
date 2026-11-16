@@ -1,9 +1,174 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
-    <title>Hi Baljka</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Zulaaa 🌹</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle, #57142d, #210815, #090308);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+}
+
+.content {
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+    animation: appear 2s ease;
+}
+
+h1 {
+    color: #fff0f5;
+    font-size: clamp(30px, 7vw, 65px);
+    text-shadow: 0 0 15px #ff174f,
+                 0 0 35px #ff477e;
+    animation: glow 2s infinite alternate;
+    line-height: 1.5;
+}
+
+.subtitle {
+    color: #ffd3e1;
+    margin-top: 20px;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.rose {
+    position: fixed;
+    top: -100px;
+    pointer-events: none;
+    z-index: 2;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) scale(.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(115vh) rotate(500deg) scale(1.3);
+        opacity: .9;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff174f;
+    }
+    to {
+        text-shadow: 0 0 40px #ff174f,
+                     0 0 70px #ff477e;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+    border: 1px solid #ff8eaf;
+    border-radius: 30px;
+    background: #b91d50;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ed3672;
+}
+
+#message {
+    color: #ffe0eb;
+    font-size: 20px;
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Hi Baljka!</h1>
+
+<div class="content">
+
+    <h1>Zulaaa,<br>чамд зориулав ❤️</h1>
+
+    <p class="subtitle">
+        You are special 🌹
+    </p>
+
+    <button onclick="showMessage()">
+        Надад зориулсан үг 💌
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+
+function makeRose() {
+    const rose = document.createElement("div");
+
+    rose.className = "rose";
+    rose.innerHTML = "🌹";
+
+    rose.style.left = Math.random() * 100 + "vw";
+
+    rose.style.fontSize =
+        (25 + Math.random() * 45) + "px";
+
+    rose.style.animationDuration =
+        (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(rose);
+
+    setTimeout(() => {
+        rose.remove();
+    }, 8000);
+}
+
+setInterval(makeRose, 180);
+
+function showMessage() {
+    document.getElementById("message").innerHTML =
+        "Энэ бүх сарнай зөвхөн чамд зориулагдсан юм шүү. ❤️🌹";
+}
+
+</script>
+
 </body>
 </html>
