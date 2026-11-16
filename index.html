@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For Zulaaa 🌹</title>
+<title>For Zulaaa ❤️</title>
 
 <style>
 * {
@@ -15,37 +14,61 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
-    background: radial-gradient(circle, #57142d, #210815, #090308);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Georgia, serif;
+    background: radial-gradient(circle, #690018, #180008 75%);
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-.content {
+.container {
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    z-index: 10;
     padding: 20px;
-    animation: appear 2s ease;
 }
 
 h1 {
-    color: #fff0f5;
-    font-size: clamp(30px, 7vw, 65px);
-    text-shadow: 0 0 15px #ff174f,
-                 0 0 35px #ff477e;
-    animation: glow 2s infinite alternate;
-    line-height: 1.5;
+    font-size: clamp(28px, 6vw, 55px);
+    color: #fff0f3;
+    text-shadow: 0 0 20px #ff174f;
+    margin-bottom: 20px;
 }
 
 .subtitle {
-    color: #ffd3e1;
-    margin-top: 20px;
     font-size: 19px;
-    letter-spacing: 2px;
+    color: #ffd6df;
+    margin-bottom: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    border: 1px solid #ff9bad;
+    border-radius: 30px;
+    background: #c90038;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff174f;
+}
+
+button:hover {
+    background: #ff174f;
+}
+
+#message {
+    display: none;
+    margin-top: 25px;
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ffe1e8;
+    animation: appear 1s ease;
 }
 
 .rose {
@@ -54,92 +77,59 @@ h1 {
     pointer-events: none;
     z-index: 2;
     animation: fall linear forwards;
+    filter: drop-shadow(0 0 12px #ff174f);
 }
 
 @keyframes fall {
     0% {
-        transform: translateY(-10vh) rotate(0deg) scale(.5);
+        transform: translateY(-10vh) rotate(0deg);
         opacity: 0;
     }
-
-    15% {
+    10% {
         opacity: 1;
     }
-
     100% {
-        transform: translateY(115vh) rotate(500deg) scale(1.3);
-        opacity: .9;
-    }
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #ff174f;
-    }
-    to {
-        text-shadow: 0 0 40px #ff174f,
-                     0 0 70px #ff477e;
+        transform: translateY(115vh) rotate(360deg);
+        opacity: 0.9;
     }
 }
 
 @keyframes appear {
     from {
         opacity: 0;
-        transform: scale(.5);
+        transform: translateY(15px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
-
-button {
-    margin-top: 35px;
-    padding: 15px 30px;
-    border: 1px solid #ff8eaf;
-    border-radius: 30px;
-    background: #b91d50;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-    background: #ed3672;
-}
-
-#message {
-    color: #ffe0eb;
-    font-size: 20px;
-    margin-top: 25px;
-    line-height: 1.6;
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="content">
-
-    <h1>Zulaaa,<br>чамд зориулав ❤️</h1>
+<div class="container">
+    <h1>Zulaaa, чамд зориулав ❤️🌹</h1>
 
     <p class="subtitle">
-        You are special 🌹
+        Энэ бүх сарнай зөвхөн чамд зориулсан юм.
     </p>
 
     <button onclick="showMessage()">
-        Надад зориулсан үг 💌
+        Надад зориулсан үг байна уу? ❤️
     </button>
 
-    <p id="message"></p>
-
+    <div id="message">
+        Чи миний хувьд онцгой хүн шүү. ❤️
+        <br>
+        Өнөөдөр чиний өдөр шиг үзэсгэлэнтэй байгаасай.
+        <br>
+        Энэ сарнай бүр чамд зориулагдсан. 🌹
+    </div>
 </div>
 
 <script>
-
 function makeRose() {
     const rose = document.createElement("div");
 
@@ -147,27 +137,27 @@ function makeRose() {
     rose.innerHTML = "🌹";
 
     rose.style.left = Math.random() * 100 + "vw";
-
-    rose.style.fontSize =
-        (25 + Math.random() * 45) + "px";
-
-    rose.style.animationDuration =
-        (3 + Math.random() * 4) + "s";
+    rose.style.fontSize = (35 + Math.random() * 75) + "px";
+    rose.style.animationDuration = (2 + Math.random() * 3) + "s";
 
     document.body.appendChild(rose);
 
     setTimeout(() => {
         rose.remove();
-    }, 8000);
+    }, 6000);
 }
 
-setInterval(makeRose, 180);
+// Маш олон сарнай тасралтгүй унана
+setInterval(makeRose, 45);
+
+// Вэб нээгдэхэд шууд олон сарнай гарна
+for (let i = 0; i < 100; i++) {
+    setTimeout(makeRose, i * 25);
+}
 
 function showMessage() {
-    document.getElementById("message").innerHTML =
-        "Энэ бүх сарнай зөвхөн чамд зориулагдсан юм шүү. ❤️🌹";
+    document.getElementById("message").style.display = "block";
 }
-
 </script>
 
 </body>
